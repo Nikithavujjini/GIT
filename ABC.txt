@@ -1,0 +1,97 @@
+select staffno,staffname,sal,addmno,student.name,fees from staff leftjoion student on staff.staffno=studdent.admno where student is null;
+a%b=a-(a/b)*b
+autoincrement
+on delete cascade
+on update cascade
+on delete restrict
+sub query----select * from emo where sal>(select sal from ep where empno=2);---it wont work
+roll up
+=============================================
+select job,sum(sal) from Employee1 where sal>5000 group by job;
+================================================
+select ename from Employee1 where sal=(select max(sal) from Employee1);
+=====================================================
+select min(sal) from Employee1 where job like "salesman";
+=====================================================
+select   ename from Employee1 where sal=(select min(sal) from Employee1);
+=================================================
+
+select sum(sal),job,deptno,grouping(job),grouping(deptno) from emp group by job,depnto with rollup;
+=====================================
+select sum(sal),job,deptno from emp group by job,deptno with rollu
+======================================================
+select deptno from Employee1  group by deptno having count(deptno)>3;
+============================displaying the secomd highest sal
+select ename from Employee where sal<(select max9sal) from Employee) order by sal desc limit 1);
+======================================
+select name from city where name like "_a%"
+===============================second letter is a
+select name from city where name like "[acs]%"===="[a-f]%"===[!abc]
+==============nam starts with a or c or s and a to f aplahabets anad not abc
+select * frorm orders left join customers on orders.cid=customers.cid
+================left join
+select * frorm orders inner join customers on orders.cid=customers.cid
+===============if there is a match in both tables(INNERJOIN)
+=============================================
+select * frorm orders right join customers on orders.cid=customers.cid
+=======================all record from customers i.e right and matches
+====================
+alter table persons add bithday date
+===================adding the column to a table
+alter table persons drop column bithday
+=====================deleting one column
+inner join ===returns records that have matching values in both tables
+left join ==return records from left table and matcing reccords
+right join===return reccords from right and matching
+full join(full outer join)===== return all records when there is match in left or either right
+constriants
+=======
+NOT NULL==ensures that a column cannot be null
+UNIQUE==ensures that a value is unique
+PRIMARY KEY== a combination of a not null and unique
+FORIGN KEY==uniquely identifies a arow/reocrd in another table
+CHECK==ensures that all values in a column satisfies specifc conditions
+DEFAULT==sets a default value for column when no value is specified condition
+INDEX==used to create and retrieve data from database very quickly
+alter is used for index also for dropping the index
+========================================
+28-01-2019
+====================================
+{course ,year}->{fees,duration}
+/*Find the names of sailors who have reserved both a red and a green boat using nested query*/
+============================
+select s.sname from Sailors1 s,Reserves2 r,Boats1 b where s.sid=r.sid and r.bid=b.bid and b.color='red' and s.sid in (select s2.sid from Sailors1 s2,Boats1 b2,Reserves2 r2 where s2.sid=r2.sid and r2.bid=b2.bid and b2.color='green');
+==========================================
+rollback
+deletes the row which has been inserted just before
+======================================
+commit
+it gives the data that is before the rollback
+if there is a rollback after the commit it will gives the same ouput of commit
+=========================
+savepoint
+===================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
